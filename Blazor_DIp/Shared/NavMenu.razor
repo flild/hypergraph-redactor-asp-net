@@ -1,0 +1,37 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Blazor_DIp</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <label class="lable_nave">Элементы</label>
+        </div>
+        <div class="nav-item px-3">
+            <button title="Узел" class="nav_btn" @onclick="chto">Узел</button>
+        </div>
+        <div class="nav-item px-3">
+            <button title="Ребро" class="nav_btn" @onclick="chto">Ребро</button>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    private void chto()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
