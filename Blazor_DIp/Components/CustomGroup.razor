@@ -1,0 +1,16 @@
+﻿@*@using Blazor.Diagrams.Components.Renderers;
+                    
+<GroupContainer Group="Group" Class="custom">
+    <span class="title"><input @bind-value="group"/></span>
+    <GroupLinks></GroupLinks>
+    <GroupNodes></GroupNodes>
+
+    @foreach (var port in Group.Ports)
+    {
+        <PortRenderer Port="port" Class="group-port"></PortRenderer>
+    }
+</GroupContainer>
+
+@code {
+    [Parameter] public design.CustomGroup. Group { get; set; }
+}*@

@@ -62,3 +62,9 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+/* make sure DiagramCanvas takes up all of parent's space */
+.diagram-container {
+    width: 100%;
+    height: calc(100% - 52px);
+}

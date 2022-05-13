@@ -10,11 +10,7 @@
 .navbar-brand {
     font-size: 1.1rem;
 }
-.lable_nave{   
-    padding: 2px 5px 1px 5px;
-    background-color: white;
-    font-size: 26px;
-}
+
 .oi {
     width: 2rem;
     font-size: 1.1rem;
@@ -23,18 +19,13 @@
 }
 
 .nav-item {
-
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
 }
-.nav_btn {
-    width: 200px;
-    height: 50px;
-    
-}
-.nav-item:first-of-type {
-    padding-top: 1rem;
-}
+
+    .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
 
     .nav-item:last-of-type {
         padding-bottom: 1rem;
@@ -49,15 +40,15 @@
         line-height: 3rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: cornflowerblue;
-}
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
 
 @media (min-width: 641px) {
     .navbar-toggler {

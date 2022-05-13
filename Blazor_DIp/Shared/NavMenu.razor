@@ -1,36 +1,32 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Blazor_DIp</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+﻿
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Diagram-Demo</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <label class="lable_nave">Элементы</label>
-        </div>
-        <div class="nav-item px-3">
-            <button title="Узел" class="nav_btn" @onclick="chto">Узел</button>
-        </div>
-        <div class="nav-item px-3">
-            <button title="Ребро" class="nav_btn" @onclick="chto">Ребро</button>
-        </div>
-    </nav>
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="diagrams">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Diagrams
+            </NavLink>
+        </li>
+    </ul>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null!;
 
     private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-    private void chto()
     {
         collapseNavMenu = !collapseNavMenu;
     }
