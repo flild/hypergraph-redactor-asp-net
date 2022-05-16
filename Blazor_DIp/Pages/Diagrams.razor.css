@@ -1,7 +1,7 @@
 ﻿﻿.func_menu {
-    display: grid;
-    height: 100vh;
-    width: 400vh;
+
+    height: 5vh;
+
     grid-template-columns: 3fr 5fr; /* two columns template */
     grid-auto-rows: 2fr 1fr; /* use auto for infinity */
     background-color: grey;
@@ -9,12 +9,12 @@
 
 .func_btn {
     background-color: rgba(255,255,255,0.25);
-    border: 1px solid aquamarine;
+    border: 1px ridge aquamarine;
 }
 
 .map {
     border: 1px solid red;
-    width: 400px;
-    height: 400px;
+    width: 140px;
+    height: 140px;
     position:center;
 }
