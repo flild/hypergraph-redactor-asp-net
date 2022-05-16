@@ -3,15 +3,21 @@
 
 <div style="width:100vw; height: 100vh">
     <div class = "func_menu">
-        <button class = "func_btn" @onclick ="Create_nuce">Создать узел</button>
+        <button class = "func_btn" @onclick ="Create_node">Создать узел</button>
         <button class = "func_btn" @onclick = "Create_group" >Создать группу</button>
-        <button class = "func_btn">Создать узел</button>
+        <button class = "func_btn" @onclick = "Create_nested">Сделать узел вложенным</button>
+        <div class="map">
+            @*<NavigatorWidget></NavigatorWidget>*@
+            <label>33333</label>
+        </div>
     </div>
-    <NavigatorWidget></NavigatorWidget>
+   
   <CascadingValue Value="Diagram">
     <DiagramCanvas></DiagramCanvas>
   </CascadingValue>
+
 </div>
+
 
 @code {
     private Diagram Diagram { get; set; }
@@ -48,13 +54,18 @@
         return node;
     }
 
-    private void Create_nuce()
+    private void Create_node()
     {
         var node = NewNode(50, 50);
         Diagram.Nodes.Add(new [] { node });
     }
 
     private void Create_group()
+    {
+
+    }
+
+    private void Create_nested()
     {
         
     }
