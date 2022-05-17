@@ -1,7 +1,7 @@
-﻿@*@using Blazor.Diagrams.Components.Renderers;
+﻿@using Blazor.Diagrams.Components.Renderers;
                     
 <GroupContainer Group="Group" Class="custom">
-    <span class="title"><input @bind-value="group"/></span>
+    <div class="title"><input @bind-value="Group.Title"/></div>
     <GroupLinks></GroupLinks>
     <GroupNodes></GroupNodes>
 
@@ -12,5 +12,5 @@
 </GroupContainer>
 
 @code {
-    [Parameter] public design.CustomGroup. Group { get; set; }
-}*@
+    [Parameter] public design.CustomGroupD Group { get; set; }
+}

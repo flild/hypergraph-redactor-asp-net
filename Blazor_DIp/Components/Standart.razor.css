@@ -1,4 +1,4 @@
-﻿/*.colored-node {
+﻿.colored-node {
     border: 2px solid black;
     text-align: center;
 }
@@ -19,4 +19,37 @@
         .colored-node .port.red {
             background-color: red;
         }
-*/
+
+.custom-node {
+    position: relative;
+    background-color: mediumseagreen;
+    border-radius: 7px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.node-body {
+    width: 90%;
+    height: 90%;
+    background-color: mediumseagreen;
+    border: 0;
+}
+.standart_node {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height:15%;
+    background-color: mediumseagreen;
+    border: 0;
+    text-align:center;
+}
+
+.port {
+    min-height: 25px;
+    min-width: 25px;
+}

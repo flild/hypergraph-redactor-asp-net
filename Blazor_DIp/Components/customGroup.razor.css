@@ -1,4 +1,4 @@
-﻿/*.group.custom {
+﻿.group.custom {
     outline: 2px solid black;
     background-color: #6fbb6e;
 }
@@ -14,4 +14,4 @@
         background-color: #6fbb6e;
         font-weight: bold;
         text-transform: uppercase;
-    }*/
+    }

@@ -2,20 +2,20 @@
 @using Blazor_DIp.Components
 @using Blazor_DIp.design
 
-<div style="width:100vw; height: 100vh">
+<div style="width:90vw; height: 90vh">
     <div class = "func_menu">
-        <button class = "func_btn" @onclick ="Create_node">Создать узел</button>
-        <button class = "func_btn" @onclick = "Create_group" >Создать группу</button>
-        <button class = "func_btn" @onclick = "Create_nested">Сделать узел вложенным</button>
-        <div class="map">
-            <NavigatorWidget></NavigatorWidget>
-
-        </div>
+        <button class = "func_btn" @onclick ="CreateNode">Создать узел</button>
+        <button class = "func_btn" @onclick = "CreateGroup" >Создать группу</button>
+        <button class = "func_btn" @onclick = "CreatePort">Добавить порт</button>
     </div>
    
   <CascadingValue Value="Diagram">
-    <DiagramCanvas></DiagramCanvas>
-  </CascadingValue>
+    <DiagramCanvas>
+        <Widgets>
+            <NavigatorWidget Width="300" Height="200" DefaultStyle="true"></NavigatorWidget>
+        </Widgets>
+    </DiagramCanvas>
+</CascadingValue>
 
 </div>
 
@@ -56,19 +56,32 @@
         return node;
     }
 
-    private void Create_node()
+    private void CreateNode()
     {
         var node = NewNode(50, 50);
         Diagram.Nodes.Add(new [] { node });
     }
 
-    private void Create_group()
+    private void CreateGroup()
     {
-
+        var selectedNodes = Diagram.Nodes.Where(n => n.Selected).ToArray();
+        //Diagram.AddGroup(new CustomGroupD(new[] { node2, node3 }));
     }
 
-    private void Create_nested()
+    private void CreatePort()
     {
-        
+        var node = Diagram.Nodes.FirstOrDefault(n => n.Selected);
+            if (node == null)
+                return;
+
+            foreach(PortAlignment portAlignment in Enum.GetValues(typeof(PortAlignment)))
+            {
+                if(node.GetPort(portAlignment) == null)
+                {
+                    node.AddPort(portAlignment);
+                    node.Refresh();
+                    break;
+                }
+            }  
     }
 }

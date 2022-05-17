@@ -1,13 +1,10 @@
 @using Blazor.Diagrams.Components.Renderers;
 @using Blazor_DIp.design;
 
-<div class="card" style="width: 250px;">
-    <div class="card-body">
-        <h5 class="card-title">Свой узел</h5>
-        <div class="form-group">
+<div class="custom-node" >
+        <div class="node-body">
             <input class="standart_node" @bind-value="Node.Name10" placeholder="Введите" />
         </div>
-    </div>
     @foreach (var port in Node.Ports)
     {
         <!-- Default ports -->

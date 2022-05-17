@@ -1,7 +1,5 @@
 using Blazor.Diagrams.Core.Geometry;
 using Blazor.Diagrams.Core.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Blazor_DIp.design
 {
