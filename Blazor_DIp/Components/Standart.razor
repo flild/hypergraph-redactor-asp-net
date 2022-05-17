@@ -1,11 +1,11 @@
-@*@using Blazor.Diagrams.Components.Renderers;
-@using Blazor_DIp.design
+@using Blazor.Diagrams.Components.Renderers;
+@using Blazor_DIp.design;
 
 <div class="card" style="width: 250px;">
     <div class="card-body">
-        <h5 class="card-title">Add</h5>
+        <h5 class="card-title">Свой узел</h5>
         <div class="form-group">
-            <input type="number" class="standart_node" @bind-value="design.Name" placeholder="����" />
+            <input class="standart_node" @bind-value="Node.Name10" placeholder="Введите" />
         </div>
     </div>
     @foreach (var port in Node.Ports)
@@ -17,5 +17,5 @@
 
 @code {
     [Parameter]
-    public BotAnswerNode Node { get; set; }
-}*@
+    public CustomModels Node { get; set; }
+}

@@ -1,5 +1,6 @@
 ﻿@page "/diagrams"
 @using Blazor_DIp.Components
+@using Blazor_DIp.design
 
 <div style="width:100vw; height: 100vh">
     <div class = "func_menu">
@@ -41,12 +42,13 @@
       }
     };
         Diagram = new Diagram(options);
-
+        Diagram.RegisterModelComponent<CustomModels,Standart>();
+       
     }
 
-    private static NodeModel NewNode(double x, double y)
+    private static CustomModels NewNode(double x, double y)
     {
-        var node = new NodeModel(new Point(x, y));
+        var node = new CustomModels(new Point(x, y));
         node.AddPort(PortAlignment.Bottom);
         node.AddPort(PortAlignment.Top);
         node.AddPort(PortAlignment.Left);
