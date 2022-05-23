@@ -56,32 +56,32 @@
         return node;
     }
 
-    private void CreateNode()
-    {
-        var node = NewNode(50, 50);
-        Diagram.Nodes.Add(new [] { node });
-    }
+        private void CreateNode()
+        {
+            var node = NewNode(50, 50);
+            Diagram.Nodes.Add(new [] { node });
+        }
 
-    private void CreateGroup()
-    {
-        var selectedNodes = Diagram.Nodes.Where(n => n.Selected).ToArray();
-        //Diagram.AddGroup(new CustomGroupD(new[] { node2, node3 }));
-    }
+        private void CreateGroup()
+        {
+            var selectedNodes = Diagram.Nodes.Where(n => n.Selected).ToArray();
+            //Diagram.AddGroup(new CustomGroupD(new[] { node2, node3 }));
+        }
 
-    private void CreatePort()
-    {
-        var node = Diagram.Nodes.FirstOrDefault(n => n.Selected);
-            if (node == null)
-                return;
+        private void CreatePort()
+        {
+            var node = Diagram.Nodes.FirstOrDefault(n => n.Selected);
+                if (node == null)
+                    return;
 
-            foreach(PortAlignment portAlignment in Enum.GetValues(typeof(PortAlignment)))
-            {
-                if(node.GetPort(portAlignment) == null)
+                foreach(PortAlignment portAlignment in Enum.GetValues(typeof(PortAlignment)))
                 {
-                    node.AddPort(portAlignment);
-                    node.Refresh();
-                    break;
-                }
-            }  
-    }
+                    if(node.GetPort(portAlignment) == null)
+                    {
+                        node.AddPort(portAlignment);
+                        node.Refresh();
+                        break;
+                    }
+                }  
+        }
 }
