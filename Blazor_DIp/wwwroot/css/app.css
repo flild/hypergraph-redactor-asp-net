@@ -74,7 +74,7 @@ a, .btn-link {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    border: 1px solid aqua;
+    border: 1px solid black;
 }
 
     .custom-node .port:hover, .default-node .port.has-links, .default.group .port.has-links {
