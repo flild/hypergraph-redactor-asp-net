@@ -21,6 +21,7 @@
 
 
 @code {
+
     private Diagram Diagram { get; set; }
 
     protected override void OnInitialized()
@@ -43,6 +44,11 @@
     };
         Diagram = new Diagram(options);
         Diagram.RegisterModelComponent<CustomModels,Standart>();
+
+        Diagram.AddGroup(new GroupModel(Array.Empty<NodeModel>())
+            {
+                Position = new Point(100, 100)
+            });
        
     }
 
@@ -65,6 +71,15 @@
         private void CreateGroup()
         {
             var selectedNodes = Diagram.Nodes.Where(n => n.Selected).ToArray();
+            foreach (var node in selectedNodes)
+            {
+                if (node.Group == null)
+                {
+                    Diagram.Groups[0].AddChild(node);
+                    Diagram.Refresh();
+                    return;
+                }
+            }
             //Diagram.AddGroup(new CustomGroupD(new[] { node2, node3 }));
         }
 
